@@ -9,12 +9,21 @@ import Home from './Component/Home'
 
 
 class App extends Component{
+
+  state = { loggedInUser: null }
+
+  updateLoggedInUser = (userObj) => {
+    this.setState({
+      loggedInUser: userObj
+    })
+  }
+
   render(){
     return(
       <div>
         <Home/>
        <Switch>
-        <Route exact path='/signup' component={Signup}/> 
+        <Route exact path='/signup' render={() => <Signup updateUser={this.updateLoggedInUser}/>}/> 
         <Route path='/login' component={Login}/> 
        </Switch> 
       </div>

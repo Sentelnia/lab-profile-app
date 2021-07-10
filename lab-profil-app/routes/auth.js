@@ -92,13 +92,11 @@ authRoutes.post('/edit', (req, res, next) => {
 
     
     User.update(
-        { _id: req.session.currentUser.id },
+        { _id: req.session.currentUser._id },
         {
-          $set: {
             username: username,
             campus: campus,
-            course: course,
-          },
+            course: course   
         }
       )
         .then( ()=> res.status(200).json({message: 'Updated' }))
