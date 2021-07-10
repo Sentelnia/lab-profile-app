@@ -80,7 +80,31 @@ authRoutes.post('/login', (req, res, next) => {
   
 /*EDIT*/
 
+authRoutes.post('/edit', (req, res, next) => {
+    //check si user connecté
+    //si pas co json erreur
+    //si co mise a jour de l'enregistrement avec les data de req.body
+    if (!req.session.currentUser) {
+        res.status(403).json({message: 'Forbidden' })
+        return;
+    } 
+    const {username, campus, course} = req.body
 
+    
+    User.update(
+        { _id: req.session.currentUser.id },
+        {
+          $set: {
+            username: username,
+            campus: campus,
+            course: course,
+          },
+        }
+      )
+        .then( ()=> res.status(200).json({message: 'Updated' }))
+  
+
+  });
 
 
 /*LOGOUT*/

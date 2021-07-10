@@ -10,9 +10,9 @@ const logger       = require('morgan');
 const path         = require('path');
 const session = require('express-session');
 
-
+const MONGODB_URI = process.env.MONGODB_URI 
 mongoose
-  .connect('mongodb://localhost/lab-profil-app', {useNewUrlParser: true})
+  .connect(MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
