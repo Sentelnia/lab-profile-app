@@ -6,11 +6,27 @@ import Signup from './Component/Signup'
 import Login from './Component/Login'
 import Home from './Component/Home'
 
-
+import {loggedin} from './Component/auth/auth-service';
 
 class App extends Component{
 
   state = { loggedInUser: null }
+
+  fetchUser() {
+    if (this.state.loggedInUser === null){
+      loggedin()
+        .then(response => {
+          this.setState({loggedInUser: response})
+        })
+        .catch(err => {
+          this.setState({loggedInUser: false}) 
+        })
+    }
+  }
+
+  componentDidMount() {
+    this.fetchUser();
+  }
 
   updateLoggedInUser = (userObj) => {
     this.setState({
@@ -21,10 +37,10 @@ class App extends Component{
   render(){
     return(
       <div>
-        <Home/>
+        <Home userInSession={this.state.loggedInUser}/>
        <Switch>
         <Route exact path='/signup' render={() => <Signup updateUser={this.updateLoggedInUser}/>}/> 
-        <Route path='/login' component={Login}/> 
+        <Route path='/login' render={() => <Login updateUser={this.updateLoggedInUser}/>}/> 
        </Switch> 
       </div>
     )
