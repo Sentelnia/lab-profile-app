@@ -1,38 +1,107 @@
-.App {
+
+html, body{
+  margin:0;
+  padding:0;
+}
+body{
+  font-size:32px;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  background-image: url('oval-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container{
+  width: 50%;
+}
+h1{
+  margin:0;
+  color:#638165;
+  padding: 50px 120px;
+}
+p{
+  color:#b3b5b6;
+  width:520px;
+  margin:0 120px;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+.btn-container{
+  margin-top: 150px;
+}
+.btn-container a{
+  width: 350px;
   text-align: center;
+  margin: 30px auto;
+  display: block;
+  text-decoration: none;
+  background-color: #c0e3be;
+  color: #454f4a;
+  font-size: 0.8em;
+  font-weight: 900;
+  padding: 5px;
+  border-radius: 5px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.titles-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+}
+.subtitles-container{
+  margin-left: 520px;
+}
+h2,h3{
+  font-size:1.1em;
+  margin:0;
+  width: 380px;
+}
+h2{
+  color: #23262a;
+}
+h3{
+  color: #6a7b6d;
+}
+form{
+  position:relative;
+}
+form input{
+  display: block;
+  margin-left:120px;
+  margin-bottom: 30px;
+  background-color:#f6f6f6;
+  border:none;
+  width: 400px;
+  font-size: 1em;
+}
+form label{
+  margin-left:120px;
+  color: #a9aaac;
+}
+form p{
+  font-size: 0.7em;
+  color: #849a85;
+  margin: 0 120px;
 }
 
-.App-link {
-  color: #61dafb;
+form button{
+  width: 380px;
+  background-color: white;
+  border:none;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 0.7em;
+  margin: 0 auto;
+  display: block;
+  font-weight: 700;
+  color: #454f4a;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-form-container{
+  position: absolute;
+  top:250px;
+  right:150px;
+  width: 400px;
+}
+.btn-form-container p{
+  width: 380px;
+  font-size: 0.7em;
+  color: #849a85;
+  margin: 0 auto 25px;
 }

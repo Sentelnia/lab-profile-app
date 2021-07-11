@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom'; 
+// import { Link } from 'react-router-dom'; 
 import Signup from './Component/Signup'
 import Login from './Component/Login'
 import Home from './Component/Home'
 
-import {loggedin} from './Component/auth/auth-service';
+import { loggedin } from './Component/auth/auth-service';
 
-class App extends Component{
+class App extends Component {
 
   state = { loggedInUser: null }
 
   fetchUser() {
-    if (this.state.loggedInUser === null){
+    if (this.state.loggedInUser === null) {
       loggedin()
         .then(response => {
-          this.setState({loggedInUser: response})
+          this.setState({ loggedInUser: response })
         })
         .catch(err => {
-          this.setState({loggedInUser: false}) 
+          this.setState({ loggedInUser: false })
         })
     }
   }
@@ -34,15 +34,15 @@ class App extends Component{
     })
   }
 
-  render(){
-    return(
-      <div>
-        <Home userInSession={this.state.loggedInUser}/>
-       <Switch>
-        <Route exact path='/signup' render={() => <Signup updateUser={this.updateLoggedInUser}/>}/> 
-        <Route path='/login' render={() => <Login updateUser={this.updateLoggedInUser}/>}/> 
-       </Switch> 
-      </div>
+  render() {
+    return (
+      <>
+        <Switch>
+          <Route exact path='/' render={() => <Home userInSession={this.state.loggedInUser}  />} />
+          <Route exact path='/signup' render={() => <Signup updateUser={this.updateLoggedInUser} />} />
+          <Route exact path='/login' render={() => <Login updateUser={this.updateLoggedInUser} />} />
+        </Switch>
+      </>
     )
   }
 }
