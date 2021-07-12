@@ -42,11 +42,13 @@ p{
   border-radius: 5px;
 }
 .titles-container{
-  display: flex;
-  align-items: flex-end;
+  position: relative;
 }
 .subtitles-container{
-  margin-left: 520px;
+  position: absolute;
+  width: 400px;
+  right: calc(25% - 200px); /*25% => Placer la div au milieu de la partie verte // 200px => 1/2 de la width de la div */
+  top:90px;
 }
 h2,h3{
   font-size:1.1em;
@@ -88,7 +90,7 @@ form button{
   border-radius: 5px;
   padding: 20px;
   font-size: 0.7em;
-  margin: 0 auto;
+  margin: 0;
   display: block;
   font-weight: 700;
   color: #454f4a;
@@ -96,7 +98,7 @@ form button{
 .btn-form-container{
   position: absolute;
   top:250px;
-  right:150px;
+  right: calc(25% - 200px); /*25% => Placer la div au milieu de la partie verte // 200px => 1/2 de la width de la div */
   width: 400px;
 }
 .btn-form-container p{
