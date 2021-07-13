@@ -36,7 +36,7 @@ class Login extends Component {
           </div>
         </div>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
+          <label>Username</label>
           <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
 
           <label>Password</label>
@@ -46,7 +46,7 @@ class Login extends Component {
 
           <div className="btn-form-container">
             <p>If you log in, you agree with all our terms and conditions where we can do whatever we want with the data!</p>
-            <button>Log in</button>
+            <button className="submit-btn">Log in</button>
           </div>
         </form>
 

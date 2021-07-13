@@ -83,17 +83,18 @@ form p{
   margin: 0 120px;
 }
 
-form button{
+.submit-btn{
   width: 380px;
   background-color: white;
   border:none;
   border-radius: 5px;
   padding: 20px;
   font-size: 0.7em;
-  margin: 0;
+  margin: 0 0 20px;
   display: block;
   font-weight: 700;
   color: #454f4a;
+  cursor: pointer;
 }
 .btn-form-container{
   position: absolute;
@@ -101,9 +102,54 @@ form button{
   right: calc(25% - 200px); /*25% => Placer la div au milieu de la partie verte // 200px => 1/2 de la width de la div */
   width: 400px;
 }
+/* .btn-form-container a{
+  text-decoration: none;
+} */
 .btn-form-container p{
   width: 380px;
   font-size: 0.7em;
   color: #849a85;
   margin: 0 auto 25px;
+}
+.profile-container a{
+  text-decoration: none;
+}
+.profile-container p{
+  color: #a9aaac;
+  font-size: 1em;
+}
+h4{
+  margin: 0 120px 30px;
+  font-size: 1.3em;
+}
+.btn-logOut{
+  color:#D0021B;
+  border:none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0.6em;
+  font-weight: 700;
+  display: block;
+  width: 200px;
+  margin: 100px auto;
+}
+.div-container{
+  display: flex;
+}
+.div-container > div{
+  width: 50%;
+}
+.right{
+  margin-top: 186px;
+}
+.right img{
+  width: 400px;
+  margin: 0 auto 35px;
+  display: block;
+  border-radius: 50%;
+  background-color: white;
+}
+.right button{
+  display: block;
+  margin: 0 auto;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { signup } from './auth/auth-service';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Signup extends Component {
 
@@ -52,7 +52,9 @@ class Signup extends Component {
 
           <div className="btn-form-container">
             <p>If you signup, you agree with all our terms and conditions where we can do whatever we want with the data!</p>
-            <button>Create the Account</button>
+            <button className="submit-btn">Create the Account</button>
+            <p>Already have account? <Link to={"/login"}>Login</Link>
+        </p>
           </div>
           
         </form>
